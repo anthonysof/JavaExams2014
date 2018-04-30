@@ -36,7 +36,7 @@ public class WageCalc{
 		f_emp = new RandomAccessFile("employee.dbs","rw");
 		f_data = new RandomAccessFile("data.dbs","rw");
 
-		int index = 0;
+		int index = 1;
 		try{
 			while(true){
 				// Move the cursor to the employee record,
