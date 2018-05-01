@@ -28,7 +28,7 @@ public class WageCalc{
     /*
         Represents an employee and his details.
     */
-    private static class Employee{
+    private class Employee{
 
         private String name, address, tel;
         private int property, children;
@@ -41,6 +41,7 @@ public class WageCalc{
 
         f_emp = new RandomAccessFile("employee.dbs","rw");
         f_data = new RandomAccessFile("data.dbs","rw");
+        WageCalc outter = new WageCalc();
 
         int index = 0;
         try{
@@ -56,7 +57,8 @@ public class WageCalc{
                     f_emp.seek((index * 140) - 1);
                     f_data.seek((index * 16) - 1);
                 }
-                Employee enew = new Employee();
+
+                Employee enew = outter.new Employee();
 
                 // Read Employee.dbs and extract the data to the employee object
 
